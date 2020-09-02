@@ -1,0 +1,11 @@
+@startuml
+  hide members
+  set namespaceseparator none
+  class "Espadachin" << (c, lightblue) >>
+  class "Guerrero" << (c, lightblue) >>
+  class "Atacante" << (m, orchid) mixin >>
+  class "Defensor" << (m, orchid) mixin >>
+  "Defensor" <|-.- "Guerrero"
+  "Atacante" <|-.- "Guerrero"
+  "Guerrero" <|-- "Espadachin"
+@enduml
