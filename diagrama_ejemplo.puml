@@ -1,11 +1,15 @@
 @startuml
-  hide members
+  hide empty members
   set namespaceseparator none
-  class "Espadachin" << (c, lightblue) >>
-  class "Guerrero" << (c, lightblue) >>
-  class "Atacante" << (m, orchid) mixin >>
-  class "Defensor" << (m, orchid) mixin >>
+  class "Espadachin" << (C, lightblue) >>
+  class "Guerrero" << (C, lightblue) >>
+  class "Atacante" << (M, orchid) mixin >>
+  "Atacante" : {method} ataque
+  "Atacante" : {method} atacar_a(otro)
+  class "Defensor" << (M, orchid) mixin >>
   "Defensor" <|-.- "Guerrero"
   "Atacante" <|-.- "Guerrero"
   "Guerrero" <|-- "Espadachin"
+  class "el zorro" << (O, white) object >>
+  "Espadachin" <-- "el zorro"
 @enduml

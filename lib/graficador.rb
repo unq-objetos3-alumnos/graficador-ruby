@@ -6,7 +6,7 @@ class Graficador
   def graficar(una_clase)
     <<~PLANTUML
       @startuml
-        hide members
+        hide empty members
         set namespaceseparator none
         #{diagrama_de(una_clase).join("\n  ")}
       @enduml
